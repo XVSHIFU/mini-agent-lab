@@ -1,0 +1,6 @@
+node_modules/
+.claude/settings.json
+.mcp.json
+.env
+.env.*
+*.log

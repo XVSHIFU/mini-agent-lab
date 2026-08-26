@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>离线任务看板</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="board">
+    <header class="board-header">
+      <h1>📋 离线任务看板</h1>
+      <p class="subtitle">数据保存在本地浏览器（localStorage），刷新页面后仍在</p>
+    </header>
+
+    <form id="task-form" class="task-form" autocomplete="off">
+      <label class="sr-only" for="task-input">新任务标题</label>
+      <input
+        id="task-input"
+        type="text"
+        placeholder="添加新任务，回车确认"
+        maxlength="200"
+        required
+      >
+      <button type="submit" class="btn btn-primary">添加</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" role="group" aria-label="任务筛选">
+        <button type="button" class="filter-btn active" data-view="all" aria-pressed="true">全部</button>
+        <button type="button" class="filter-btn" data-view="active" aria-pressed="false">进行中</button>
+        <button type="button" class="filter-btn" data-view="completed" aria-pressed="false">已完成</button>
+      </div>
+      <button id="clear-completed" type="button" class="btn btn-ghost" disabled>清空已完成</button>
+    </div>
+
+    <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+    <p id="empty-state" class="empty-state" hidden></p>
+
+    <footer class="board-footer">
+      <p id="task-stats">共 0 项 · 未完成 0 项</p>
+    </footer>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

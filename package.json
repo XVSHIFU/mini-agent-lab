@@ -1,0 +1,22 @@
+{
+  "name": "mini-claude-code",
+  "version": "1.0.0",
+  "private": true,
+  "description": "零第三方依赖、兼容 OpenAI Chat Completions 接口的教学型 Coding Agent",
+  "type": "module",
+  "bin": {
+    "mini-claude": "./src/cli.mjs"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node src/cli.mjs",
+    "demo": "node demo.mjs",
+    "test": "npm run test:product && npm run test:unit && npm run test:example",
+    "test:product": "node --test test/product-tests.mjs",
+    "test:unit": "node test/unit-tests.mjs",
+    "test:example": "node --test examples/task-board/test/task-store.test.mjs",
+    "example:task-board": "node examples/task-board/server.mjs"
+  }
+}

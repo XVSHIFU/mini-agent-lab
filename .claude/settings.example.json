@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      {
+        "tool": "run_shell",
+        "pattern": "node --test*",
+        "reason": "项目测试命令允许直接执行"
+      },
+      "read_file",
+      "list_files",
+      "grep_search"
+    ],
+    "deny": [
+      {
+        "tool": "run_shell",
+        "pattern": "git push*",
+        "reason": "推送远端必须由用户明确执行"
+      },
+      {
+        "tool": "write_file",
+        "pattern": "*.env",
+        "reason": "禁止通过 Agent 写入环境变量文件"
+      },
+      "run_shell(rm -rf*)"
+    ]
+  }
+}

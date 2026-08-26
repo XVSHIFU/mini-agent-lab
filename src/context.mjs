@@ -17,10 +17,11 @@ import { homedir } from "node:os";
 
 const PERSIST_THRESHOLD = 30 * 1024; // 30KB
 
-export function persistLargeResult(toolName, result) {
+export function persistLargeResult(toolName, result, { outputDir } = {}) {
   if (Buffer.byteLength(result) <= PERSIST_THRESHOLD) return result;
 
-  const dir = join(homedir(), ".mini-claude", "tool-results");
+  // 生产环境沿用用户目录；测试和嵌入方可以注入隔离目录。
+  const dir = outputDir ?? join(homedir(), ".mini-claude", "tool-results");
   mkdirSync(dir, { recursive: true });
   const filename = `${Date.now()}-${toolName}.txt`;
   const filepath = join(dir, filename);

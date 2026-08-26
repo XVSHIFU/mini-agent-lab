@@ -69,9 +69,12 @@ check("general 不含 agent", !getGeneralToolDefs().some((t) => t.function.name 
 
 console.log("=== 上下文（ch7）===");
 const big = "x".repeat(40 * 1024);
-check("大结果持久化", persistLargeResult("read_file", big).includes("Full output saved"));
+const toolResultDir = path.join(tmp, "tool-results");
+const persisted = persistLargeResult("read_file", big, { outputDir: toolResultDir });
+check("大结果持久化", persisted.includes("Full output saved")
+  && fs.readdirSync(toolResultDir).length === 1);
 const short = "small";
-check("小结果不持久化", persistLargeResult("read_file", short) === short);
+check("小结果不持久化", persistLargeResult("read_file", short, { outputDir: toolResultDir }) === short);
 const many = [];
 for (let i = 0; i < 20; i++) many.push({ role: "user", content: `msg ${i}` });
 const compacted = await maybeCompact(many, async () => "摘要");

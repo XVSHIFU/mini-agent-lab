@@ -1,5 +1,9 @@
 # Mini Claude Code
 
+本仓库从 [ai-agent-learning](https://github.com/XVSHIFU/ai-agent-learning) 的 `mini-claude-code/` 独立拆分，保留该目录的提交历史。现有实现仍为教学型 Coding Agent；后续专业方向见[开发指导大纲](DEVELOPMENT_OUTLINE.md)，其中专业 Agent 尚待实现。
+
+来源基线：`8bbf59c`；拆分基线：`4592c782f1f7d8ee0b87e1fa15a3362cb47eb380`。原目录未包含独立 LICENSE，本次未擅自添加或变更授权。
+
 一个可以独立复制和运行的教学型 Coding Agent。它使用 JavaScript ESM 编写，零第三方依赖，兼容 OpenAI 风格的 `chat/completions` 接口。
 
 这份目录由最终综合项目整理而来。运行代码、配置示例、测试、ADR 和演示项目都在本目录内，不依赖原学习仓库中的其他章节。

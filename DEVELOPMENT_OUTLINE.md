@@ -1,4 +1,4 @@
-# mini 专业 Agent 开发指导大纲
+# mini-agent-lab 开发指导大纲
 
 以现有 mini 为基础，边学习开源实现，边完成范围明确的专业 Agent。
 
@@ -20,7 +20,7 @@
 
 ## 2. 独立仓库分工
 
-将 [mini-claude-code](https://github.com/XVSHIFU/ai-agent-learning/tree/main/mini-claude-code) 已拆分到本地 `E:\AI-AGENT\mini-claude-code`，GitHub 仓库待创建：
+原 [mini-claude-code](https://github.com/XVSHIFU/ai-agent-learning/tree/main/mini-claude-code) 已拆分到本地 `E:\AI-AGENT\mini-agent-lab`，GitHub 仓库：[mini-agent-lab](https://github.com/XVSHIFU/mini-agent-lab)。分工如下：
 
 - **原 ai-agent-learning：**保留学习笔记和教学版本，在 README 链接新仓库。
 - **新仓库：**以当前 mini 为起点，共用模型调用、工具执行、权限和 Trace；每个专业方向单独放工具、提示词、案例与说明，避免复制多套核心。

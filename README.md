@@ -1,4 +1,8 @@
-# Mini Claude Code
+# mini-agent-lab
+
+基于 mini Coding Agent，构建面向运维、安全与基础设施等领域的专业 Agent，通过开源学习、工具扩展与场景评测探索实际应用。
+
+仓库：[XVSHIFU/mini-agent-lab](https://github.com/XVSHIFU/mini-agent-lab)。
 
 本仓库从 [ai-agent-learning](https://github.com/XVSHIFU/ai-agent-learning) 的 `mini-claude-code/` 独立拆分，保留该目录的提交历史。现有实现仍为教学型 Coding Agent；后续专业方向见[开发指导大纲](DEVELOPMENT_OUTLINE.md)，其中专业 Agent 尚待实现。
 
@@ -39,7 +43,7 @@ node --version
 进入本目录：
 
 ```powershell
-cd C:\path\to\mini-claude-code
+cd C:\path\to\mini-agent-lab
 ```
 
 先运行免 Key 演示：
@@ -124,7 +128,7 @@ Agent 始终把当前工作目录视为目标项目。因此，可以把这个�
 ```powershell
 cd E:\path\to\your-project
 $env:AGENT_API_KEY = "sk-xxx"
-$miniClaude = "C:\path\to\mini-claude-code\src\cli.mjs"
+$miniClaude = "C:\path\to\mini-agent-lab\src\cli.mjs"
 node $miniClaude "先只读分析项目结构"
 ```
 
@@ -237,7 +241,7 @@ npm run example:task-board
 ## 目录结构
 
 ```text
-mini-claude-code/
+mini-agent-lab/
 ├── .claude/
 │   ├── settings.example.json
 │   └── skills/review/SKILL.md

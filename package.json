@@ -1,5 +1,5 @@
 {
-  "name": "mini-claude-code",
+  "name": "mini-agent-lab",
   "version": "1.0.0",
   "private": true,
   "description": "零第三方依赖、兼容 OpenAI Chat Completions 接口的教学型 Coding Agent",
